@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Formation Typo3</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <f:for each="{mainnavigation}" as="mainNavigationItem">
+                <f:if condition="{mainNavigationItem.children}">
+                    <f:then>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle {f:if(condition: mainNavigationItem.active, then:'active')}"
+                                data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {mainNavigationItem.title}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <f:for each="{mainNavigationItem.children}" as="child">
+                                    <a class=" dropdown-item " href="{child.link}" target="{child.target}"
+                                        title="{child.title}">
+                                        {child.title}</a>
+                                </f:for>
+                            </div>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <li class="nav-item ">
+                            <a class="nav-link {f:if(condition: mainNavigationItem.active, then:'active')}"
+                                href="{mainNavigationItem.link}"
+                                target="{mainNavigationItem.target}">{mainNavigationItem.title}</a>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </ul>
+    </div>
+</nav>
