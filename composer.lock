@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22520d3fd2442283b9b308dba07ab5e1",
+    "content-hash": "99712e5e20c587d87a66cfba90a025c5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4967,7 +4967,7 @@
         },
         {
             "name": "talan/mypackage",
-            "version": "dev-main",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./extensions/mypackage",

@@ -1,0 +1,18 @@
+mod.wizards.newContentElement.wizardItems{
+    // tabName for the newTab
+    mynewTab.header = New 
+    mynewTab {
+        elements {
+            mypackage_recipes {
+                iconIdentifier = content-coffee
+                title = Recipes
+                description = Create a recipe
+                tt_content_defValues {
+                    CType = recipesContent
+                    list_type = mypackage_recipes
+                }
+            }
+        }
+        show := addToList(mypackage_recipes)
+    }
+}

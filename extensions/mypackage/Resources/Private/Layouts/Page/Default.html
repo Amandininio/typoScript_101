@@ -1,5 +1,13 @@
-<f:render partial="Menu" arguments="{mainnavigation: mainnavigation}" />
+<f:render partial="Menu" />
+<!-- arguments="{mainnavigation: mainnavigation}" /> -->
 <div class="container-fluid">
     <f:render section="Main" />
 </div>
-<f:render partial="Footer" arguments="{mainnavigation: mainnavigation}" />
+<f:render partial="Footer" arguments="{footerElements: footerElements}" />
+
+
+<!-- condition="1" to turn ON-->
+<f:if condition="1">
+    <f:debug inline="1" title="Debug Information">{_all}</f:debug>
+</f:if>
+<!---->

@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$M1g3ZXFJQ25CMFo4UnNGMQ$bFKjAqpelW4/X3kd82nzounscZ8Lampvq53zGbBgFlM',
         'passwordHashing' => [
@@ -19,7 +19,6 @@ return [
     ],
     'EXTENSIONS' => [
         'backend' => [
-            'loginLogo' => '',
             'backendFavicon' => 'EXT:mypackage/Resources/Public/Icons/setup.png',
             'backendLogo' => '',
             'loginBackgroundImage' => '',
@@ -34,7 +33,7 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => false,
+        'debug' => true,
         'disableNoCacheParameter' => true,
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -57,7 +56,7 @@ return [
                     'writerConfiguration' => [
                         'notice' => [
                             'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
+                                'disabled' => false,
                             ],
                         ],
                     ],
@@ -105,10 +104,10 @@ return [
                 ],
             ],
         ],
-        'devIPmask' => '',
-        'displayErrors' => 0,
+        'devIPmask' => '*',
+        'displayErrors' => 1,
         'encryptionKey' => 'e6b8ffb1c9ab5df760db67dc21d1f2454be8c9dae5bb4821f0bd99d41ad970cf112b983eacb7f9d4429d17e447fb9424',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'features' => [
             'unifiedPageTranslationHandling' => true,
             'yamlImportsFollowDeclarationOrder' => true,
