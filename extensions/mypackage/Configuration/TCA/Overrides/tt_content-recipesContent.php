@@ -129,18 +129,6 @@ $ingredients_lists = [
             'type' => 'text',
             'renderType' => 'textTable',
             'placeholder' => 'ingredient',
-            'size' => 20,
-            'fieldControl' => [
-                'editPopup' => [
-                    'disabled' => true,
-                ],
-                'addRecord' => [
-                    'disabled' => true,
-                ],
-                'listModule' => [
-                    'disabled' => true,
-                ]
-            ]
         ],
     ],
 ];
