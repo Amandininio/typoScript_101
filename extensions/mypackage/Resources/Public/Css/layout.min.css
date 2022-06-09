@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+.recipesHandwritting {
+    font-family: 'Courgette';
+    font-size: xx-large;
+}
+
+.bg-prep {
+    background-color: rgba(234, 244, 246, 0.9);
+}

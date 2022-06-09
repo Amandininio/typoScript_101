@@ -1,0 +1,204 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "recipes": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "bodytext",
+                        "assets",
+                        "tx_mask_recipe_time",
+                        "tx_mask_recipe_diffifuclty",
+                        "tx_mask_recipe_cooking_time",
+                        "tx_mask_ingredients"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "fa-bookmark-o",
+                    "iconOverlay": "fa-anchor",
+                    "key": "recipes",
+                    "label": "recipes",
+                    "labels": [
+                        "header01",
+                        "description",
+                        "img",
+                        "Temps de prep",
+                        "Difficult\u00e9",
+                        "temps de cuisson",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_ingredients": {
+                    "tt_content": {
+                        "tx_mask_ingredients": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_recipe_cooking_time": {
+                    "tt_content": {
+                        "tx_mask_recipe_cooking_time": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_recipe_diffifuclty": {
+                    "tt_content": {
+                        "tx_mask_recipe_diffifuclty": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_recipe_time": {
+                    "tt_content": {
+                        "tx_mask_recipe_time": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "assets": {
+                    "coreField": 1,
+                    "fullKey": "assets",
+                    "key": "assets",
+                    "type": "media"
+                },
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "recipes": "text"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "tx_mask_ingredients": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_ingredients",
+                    "key": "ingredients",
+                    "type": "inline"
+                },
+                "tx_mask_recipe_cooking_time": {
+                    "config": {
+                        "eval": "int",
+                        "max": "3",
+                        "range": {
+                            "lower": "0",
+                            "upper": "180"
+                        },
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_recipe_cooking_time",
+                    "key": "recipe_cooking_time",
+                    "type": "integer"
+                },
+                "tx_mask_recipe_diffifuclty": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            [
+                                "Facile",
+                                "facile",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Moyen",
+                                "moyen",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Difficile",
+                                "difficile",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_recipe_diffifuclty",
+                    "key": "recipe_diffifuclty",
+                    "type": "select"
+                },
+                "tx_mask_recipe_time": {
+                    "config": {
+                        "eval": "required,int",
+                        "max": "3",
+                        "range": {
+                            "lower": "0",
+                            "upper": "180"
+                        },
+                        "size": "10",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_recipe_time",
+                    "key": "recipe_time",
+                    "type": "integer"
+                }
+            }
+        },
+        "tx_mask_ingredients": {
+            "sql": {
+                "tx_mask_recipe_ingredients_list": {
+                    "tx_mask_ingredients": {
+                        "tx_mask_recipe_ingredients_list": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_recipe_ingredients_list": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_recipe_ingredients_list",
+                    "inlineParent": "tx_mask_ingredients",
+                    "key": "recipe_ingredients_list",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

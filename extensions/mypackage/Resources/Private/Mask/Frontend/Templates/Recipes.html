@@ -1,0 +1,28 @@
+<f:if condition="{data.header}">
+    {data.header}
+</f:if>
+<f:if condition="{data.bodytext}">
+    {data.bodytext -> f:format.nl2br()}
+</f:if>
+<f:for each="{data.assets}" as="file">
+    <f:media file="{file}" width="200" />
+    {file.description}
+</f:for>
+<f:if condition="{data.tx_mask_recipe_time}">
+    {data.tx_mask_recipe_time}
+</f:if>
+<f:variable name="recipeDiffifuclty" value="{data.tx_mask_recipe_diffifuclty}"/>
+<f:switch expression="{recipeDiffifuclty}">
+    <f:case value="facile">
+        {recipeDiffifuclty}
+    </f:case>
+    <f:case value="moyen">
+        {recipeDiffifuclty}
+    </f:case>
+    <f:case value="difficile">
+        {recipeDiffifuclty}
+    </f:case>
+</f:switch>
+<f:if condition="{data.tx_mask_recipe_cooking_time}">
+    {data.tx_mask_recipe_cooking_time}
+</f:if>

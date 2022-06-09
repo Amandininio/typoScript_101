@@ -14,18 +14,24 @@ config.contentObjectExceptionHandler = 0
 ##############
 #### PAGE ####
 ##############
-// lib.contentElement {
-//     templateRootPaths.200 = EXT:mypackage/Resources/Private/Templates/ContentElements/
-// }
 
 tt_content {
     recipesContent =< lib.contentElement
     recipesContent {
         templateName = RecipesContent
-        // dataProcessing {
-        //     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-        //     10.references.fieldName = assets
-        // }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+            10 {
+                fieldName = pi_flexform
+                as = settings
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            20 {
+                references.fieldName = image
+                references.table = tt_content
+                as = images
+            }
+        }
     }
 }
 

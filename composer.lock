@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99712e5e20c587d87a66cfba90a025c5",
+    "content-hash": "199311373a4bfa04cc0f9219e70ebeb5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1325,6 +1325,79 @@
             "time": "2022-04-11T09:56:57+00:00"
         },
         {
+            "name": "ichhabrecht/mask-export",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IchHabRecht/mask_export.git",
+                "reference": "4474b20a0355c7d4556e98fb2d6af75ba789c947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IchHabRecht/mask_export/zipball/4474b20a0355c7d4556e98fb2d6af75ba789c947",
+                "reference": "4474b20a0355c7d4556e98fb2d6af75ba789c947",
+                "shasum": ""
+            },
+            "require": {
+                "mask/mask": "^4.0 || ^5.0 || ^6.0 || ^7.1",
+                "php": "^7.2 || ^8.0",
+                "typo3/cms-core": "^9.5 || ^10.4.16 || ^11.5",
+                "typo3/cms-extbase": "^9.5 || ^10.4.16 || ^11.5",
+                "typo3/cms-extensionmanager": "^9.5 || ^10.4.16 || ^11.5",
+                "typo3/cms-fluid": "^9.5 || ^10.4.16 || ^11.5"
+            },
+            "replace": {
+                "typo3-ter/mask-export": "self.version"
+            },
+            "require-dev": {
+                "nimut/testing-framework": "6.x-dev",
+                "phpunit/phpunit": "^8.5",
+                "typo3/cms-fluid-styled-content": "^9.5 || ^10.4.16 || ^11.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "mask_export",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IchHabRecht\\MaskExport\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nicole Cordes",
+                    "email": "typo3@cordes.co",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Export your mask elements as extension",
+            "homepage": "https://github.com/IchHabRecht/mask_export",
+            "keywords": [
+                "TYPO3 CMS",
+                "content elements",
+                "export",
+                "mask",
+                "wizard"
+            ],
+            "support": {
+                "issues": "https://github.com/IchHabRecht/mask_export/issues",
+                "source": "https://github.com/IchHabRecht/mask_export/tree/4.0.2"
+            },
+            "time": "2022-05-05T16:31:19+00:00"
+        },
+        {
             "name": "lolli42/finediff",
             "version": "1.0.2",
             "source": {
@@ -1388,6 +1461,99 @@
                 "source": "https://github.com/lolli42/FineDiff/tree/1.0.2"
             },
             "time": "2022-05-23T07:44:28+00:00"
+        },
+        {
+            "name": "mask/mask",
+            "version": "v7.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gernott/mask.git",
+                "reference": "2916796e950320f6e24bf711417b8b5ba61b37fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gernott/mask/zipball/2916796e950320f6e24bf711417b8b5ba61b37fa",
+                "reference": "2916796e950320f6e24bf711417b8b5ba61b37fa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2 || ^8.0",
+                "typo3/cms-backend": "^10.4.16 || ^11.5.0",
+                "typo3/cms-core": "^10.4.16 || ^11.5.0",
+                "typo3/cms-fluid": "^10.4.16 || ^11.5.0",
+                "typo3/cms-fluid-styled-content": "^10.4.16 || ^11.5.0"
+            },
+            "replace": {
+                "typo3-ter/mask": "self.version"
+            },
+            "require-dev": {
+                "bnf/phpstan-psr-container": "^1.0",
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "friendsoftypo3/phpstan-typo3": "^0.9.0",
+                "jangregor/phpstan-prophecy": "^1.0",
+                "phpstan/phpstan": "^1.4",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^8.4",
+                "typo3/coding-standards": "^0.5",
+                "typo3/tailor": "^1.2",
+                "typo3/testing-framework": "^6"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "mask",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MASK\\Mask\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WEBprofil - Gernot Ploiner e.U.",
+                    "email": "office@webprofil.at",
+                    "homepage": "https://www.webprofil.at",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Nikita Hovratov",
+                    "email": "info@nikita-hovratov.de",
+                    "homepage": "https://www.nikita-hovratov.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create your own content elements and page templates. Easy to use, even without programming skills because of the comfortable drag and drop user interface. Stored in structured database tables. Style your frontend with Fluid tags. Ideal, if you want to switch from Templavoila.",
+            "homepage": "https://extensions.typo3.org/extension/mask",
+            "keywords": [
+                "TYPO3 CMS",
+                "contentelements",
+                "mask",
+                "wizard"
+            ],
+            "support": {
+                "chat": "https://typo3.slack.com/archives/C0FD5F6P2",
+                "docs": "https://docs.typo3.org/p/mask/mask/main/en-us/",
+                "issues": "https://github.com/gernott/mask/issues/",
+                "source": "https://github.com/gernott/mask"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/nhovratov",
+                    "type": "Nikita Hovratov (Developer)"
+                },
+                {
+                    "url": "https://github.com/sponsors/Gernott",
+                    "type": "WEBprofil - Gernot Ploiner e.U. (Founder)"
+                }
+            ],
+            "time": "2022-05-30T08:58:01+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -4966,8 +5132,86 @@
             "time": "2022-01-26T16:32:32+00:00"
         },
         {
+            "name": "t3/dce",
+            "version": "2.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a-r-m-i-n/dce.git",
+                "reference": "6516d092bf75023bd2339b911804b707af1c9b62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/a-r-m-i-n/dce/zipball/6516d092bf75023bd2339b911804b707af1c9b62",
+                "reference": "6516d092bf75023bd2339b911804b707af1c9b62",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.3",
+                "typo3/cms-core": "^9.5 || ^10.4 || ^11.0"
+            },
+            "replace": {
+                "arminvieweg/dce": "*"
+            },
+            "require-dev": {
+                "armin/editorconfig-cli": "^1.5",
+                "friendsofphp/php-cs-fixer": "^3.1",
+                "jangregor/phpstan-prophecy": "^0.8",
+                "phpstan/phpstan": "^0.12.98",
+                "saschaegerer/phpstan-typo3": "^0.13",
+                "t3/cms": "^10.4",
+                "typo3/cms-linkvalidator": "^10.4"
+            },
+            "suggest": {
+                "b13/container": "Brings clean container functionality to TYPO3 CMS, supported by DCE."
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "dce",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/public",
+                    "app-dir": ".Build"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Classes/Compatibility.php"
+                ],
+                "psr-4": {
+                    "T3\\Dce\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Armin Vieweg",
+                    "email": "armin@v.ieweg.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Best FlexForm based content elements since 2012. With TCA mapping feature, simple backend view and much more features which makes it super easy to create own content element types.",
+            "homepage": "https://extensions.typo3.org/extension/dce/",
+            "keywords": [
+                "Dynamic Content Elements",
+                "TYPO3 CMS",
+                "content elements",
+                "dce"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/typo3cms/extensions/dce/",
+                "forum": "https://www.facebook.com/TYPO3.DCE.Extension/",
+                "issues": "https://github.com/a-r-m-i-n/dce/issues",
+                "source": "https://github.com/a-r-m-i-n/dce"
+            },
+            "time": "2022-04-28T13:04:21+00:00"
+        },
+        {
             "name": "talan/mypackage",
-            "version": "dev-master",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "./extensions/mypackage",

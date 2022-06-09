@@ -23,33 +23,22 @@ call_user_func(
     }
 );
 
-//                                   // // // // // // // // 
-//                                   DECLARING NEW FIELD ELEMENT
-//                                  // // // // // // // // 
+///////////////////////////////// // // // // // // // 
+///////////////////////////////DECLARING NEW FIELD ELEMENT
+///////////////////////////////// // // // // // // //
+
 //   // // // // // // // // // 
-//  // tx_examples_separator
+//  // Flexform
 // // // // // // // // //
-$tx_examples_separator = [
-    'tx_examples_separator' => [
-        'label' => 'LLL:EXT:examples/Resources/Private/Language/locallang_db.xlf:tt_content.tx_examples_separator',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [
-                ['Standard CSV data formats', '--div--'],
-                ['Comma separated', ','],
-                ['Semicolon separated', ';'],
-                ['Some tests', '--div--'],
-                ['Jambon', 'ooo'],
-                ['Special formats', '--div--'],
-                ['Pipe separated (TYPO3 tables)', '|'],
-                ['Tab separated', "\t"],
-            ],
-            'default' => 'ooo'
-        ],
-    ],
-];
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tx_examples_separator);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    // 'list_type' does not apply here
+    '*',
+    // Flexform configuration schema file
+    'FILE:EXT:mypackage/Configuration/FlexForms/flexform_recipesElement.xml',
+    // ctype
+    'recipesContent'
+);
+
 
 //    // // // // // // // // 
 //   // // // // // // // // // 
@@ -119,27 +108,64 @@ $servings = [
 
 //    // // // // // // // // 
 //   // // // // // // // // // 
-//  // ingredients list
+//  // IRRE
 // // // // // // // // //
-$ingredients_lists = [
-    'ingredients_lists' => [
-        'label' => 'ingredients_lists',
-        'description' => 'Liste d\'ingredients',
+// $irre = [
+//     'my_new_field2' => [
+//         'label' => 'inline field with field information',
+//         'config' => [
+//             'type' => 'inline',
+//             // further configuration can be found in the examples above
+//             // ....
+//         ],
+//     ],
+// ];
+// \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $irre);
+//    // // // // // // // // 
+//   // // // // // // // // // 
+//  // Niveau de difficulté
+// // // // // // // // //
+$difficulty_level = [
+    'difficulty_level' => [
+        'exclude' => 1,
+        'label' => 'Difficulty level',
         'config' => [
-            'type' => 'text',
-            'renderType' => 'textTable',
-            'placeholder' => 'ingredient',
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                [
+                    'Facile',
+                    'Facile'
+                ],
+                [
+                    'Moyen',
+                    'Moyen'
+                ],
+                [
+                    'Difficile',
+                    'Difficile'
+                ]
+            ],
         ],
     ],
 ];
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $ingredients_lists);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $difficulty_level);
 
 
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    // 'list_type' does not apply here
+    '*',
+    // Flexform configuration schema file
+    'FILE:EXT:mypackage/Configuration/FlexForms/Registration.xml',
+    // ctype
+    'accordion'
+);
 
-//                                   // // // // // // // // 
-//                                   DECLARING CONTENT SECTIONS AND FIELDS
-//                                   // // // // // // // // 
+
+//// // // // // // // // 
+// DECLARING CONTENT SECTIONS AND FIELDS
+//// // // // // // // // 
 // Configure the default backend fields for the content element
 $GLOBALS['TCA']['tt_content']['types']['recipesContent'] =
     [
@@ -147,17 +173,16 @@ $GLOBALS['TCA']['tt_content']['types']['recipesContent'] =
         --div--;Onglet edition,
         --palette--;;general,
             header; Title,
-            ingredients_lists, liste d\'ingrdients,
             bodytext;Description,
-            subheader; sous Title,
-            tx_examples_separator; THE EXAMPLE,
-            pi_flexform; the flexform package,
             preparation_time; Temps de preparation,
+            difficulty_level; Niveau de difficulté,
             cooking_time; Temps de cuisson,
-         --div--;Un autre onglet,
-            --palette--;;hidden,
-            --palette--;;access,
-      ',
+            image, 
+            pi_flexform; -,'
+        //  --div--;Un autre onglet,
+        //     --palette--;;hidden,
+        //     --palette--;;access,
+        ,
         'columnsOverrides' => [
             'bodytext' => [
                 'config' => [

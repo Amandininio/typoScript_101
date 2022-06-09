@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/DataFormats/T3datastructure/Elements/Index.html -->
+<T3DataStructure>
+    <sheets>
+        <sheet_ingredients>
+            <ROOT>
+                <TCEforms>
+                    <listeIngredients>Liste d'ingredients</listeIngredients>
+                </TCEforms>
+                <type>array</type>
+                <section>1</section>
+                <!-- MULTIPLE FIELDS -->
+                <el>
+                    <nombreDePersonnes>
+                        <TCEforms>
+                            <label>Nombre de personnes</label>
+                            <description> nombre de personne à servir</description>
+                            <config>
+                                <type>input</type>
+                                <size>10</size>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>100</upper>
+                                </range>
+                                <eval>required,int</eval>
+                            </config>
+                        </TCEforms>
+                    </nombreDePersonnes>
+                    <listeIngredients>
+                        <title>Ingredients</title>
+                        <!-- <title>LLL:EXT:myextension/Resources/Private/Language/locallang_be.xlf:projects.flexformTitle</title> -->
+                        <type>array</type>
+                        <section>1</section>
+                        <el>
+                            <ingredients>
+                                <title>Ajouter un Ingredient</title>
+                                <type>array</type>
+                                <el>
+                                    <ingredient>
+                                        <TCEforms>
+                                            <label>Nouvel Ingredient</label>
+                                            <config>
+                                                <type>input</type>
+                                                <size>20</size>
+                                                <eval>trim</eval>
+                                            </config>
+                                        </TCEforms>
+                                    </ingredient>
+                                </el>
+                            </ingredients>
+                        </el>
+                    </listeIngredients>
+                    <listeInstructions>
+                        <title>Instructions</title>
+                        <!-- <title>LLL:EXT:myextension/Resources/Private/Language/locallang_be.xlf:projects.flexformTitle</title> -->
+                        <type>array</type>
+                        <section>1</section>
+                        <el>
+                            <instructions>
+                                <title>Ajouter une instruction</title>
+                                <type>array</type>
+                                <el>
+                                    <instruction>
+                                        <TCEforms>
+                                            <label>Nouvelle instruction</label>
+                                            <config>
+                                                <type>input</type>
+                                                <size>255</size>
+                                                <eval>trim</eval>
+                                            </config>
+                                        </TCEforms>
+                                    </instruction>
+                                </el>
+                            </instructions>
+                        </el>
+                    </listeInstructions>
+                </el>
+            </ROOT>
+
+        </sheet_ingredients>
+    </sheets>
+</T3DataStructure>

@@ -1,7 +1,87 @@
 <!-- <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"> -->
-<h2>{data.header}</h2>
-<f:debug>{_all}</f:debug>
-<h2>{data.subheader}</h2>
-<div>
-    <f:format.html>{data.bodytext}</f:format.html>
+<div class="container-lg card my-3 p-3">
+    <div class="mx-5">
+        <h4>{data.header}</h4>
+        <f:format.html>{data.bodytext}</f:format.html>
+    </div>
+
+    <f:for each="{images}" as="image">
+        <f:image image="{image}" class="rounded w-auto h-auto" />
+        <div class="card-body">
+            <h5 class="card-title">{image.title}</h5>
+            <div class="card-text">{image.description}</div>
+        </div>
+    </f:for>
+
+    <div class="mx-5">
+
+        <div class="card p-5 my-5 bg-prep">
+
+            <h5 class="card-title font-weight-bold text-center">Préparation</h5>
+
+            <div class="row my-6 justify-content-md-center text-center">
+                <div class="col-lg-2">
+                    <div>
+                        <f:image src="EXT:mypackage/Resources/Public/Icons/recipes/rounded_sablier.png"
+                            alt="alt text" />
+                    </div>
+                    <div>{data.preparation_time} min</div>
+                </div>
+                <div class="col-lg-2">
+                    <div>
+                        <f:image src="EXT:mypackage/Resources/Public/Icons/recipes/rounded_toque.png" alt="alt text" />
+                    </div>
+                    <div>{data.difficulty_level}
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div>
+                        <f:image src="EXT:mypackage/Resources/Public/Icons/recipes/rounded_fire.png" alt="alt text" />
+                    </div>
+                    <div>
+                        {data.cooking_time} min
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <h5 class="font-weight-bold">Ingrédients: {settings.nombreDePersonnes} pers.</h5>
+        <f:for each="{settings.listeIngredients}" as="listeIngredient" iteration="iterator">
+            <f:if condition="{iterator.isOdd}">
+                <f:then>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <f:image src="EXT:mypackage/Resources/Public/Icons/recipes/check.png" alt="alt text" />
+                            {listeIngredient.ingredients.ingredient}
+                        </div>
+                        <f:if condition="{iterator.isLast}">
+                            <!-- This condition close the div.row iff number of ingredients is odd -->
+                    </div>
+            </f:if>
+            </f:then>
+            <f:else>
+                <div class="col-lg-6">
+                    <f:image src="EXT:mypackage/Resources/Public/Icons/recipes/check.png" alt="alt text" />
+                    {listeIngredient.ingredients.ingredient}
+                </div>
+    </div>
+    <!-- END OF ROW  -->
+    </f:else>
+    </f:if>
+    </f:for>
+
+    <h5 class="my-3 font-weight-bold"> Instructions </h5>
+    <f:for each="{settings.listeInstructions}" as="listeInstruction" iteration="iterator">
+        <div>
+            <span class="recipesHandwritting mr-3">{iterator.cycle}.</span> {listeInstruction.instructions.instruction}
+        </div>
+
+        <f:if condition='{iterator.isLast}'>
+            <div> <span class="recipesHandwritting mr-3">{iterator.cycle + 1}.</span> C'est prêt !! </div>
+        </f:if>
+    </f:for>
 </div>
+</div>
+<f:debug>{_all}</f:debug>
