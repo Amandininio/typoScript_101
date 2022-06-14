@@ -27,6 +27,9 @@ call_user_func(
 ///////////////////////////////DECLARING NEW FIELD ELEMENT
 ///////////////////////////////// // // // // // // //
 
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $ingredients_list);
+
 //   // // // // // // // // // 
 //  // Flexform
 // // // // // // // // //
@@ -172,9 +175,9 @@ $GLOBALS['TCA']['tt_content']['types']['recipesContent'] =
         'showitem' => '
         --div--;Onglet edition,
         --palette--;;general,
-            header; Title,
-            bodytext;Description,
-            preparation_time; Temps de preparation,
+            header; LLL:EXT:mypackage/Resources/Private/Language/locallang.xlf:recipesContent.header,
+            bodytext;LLL:EXT:mypackage/Resources/Private/Language/locallang.xlf:recipesContent.description,
+            preparation_time; LLL:EXT:mypackage/Resources/Private/Language/locallang.xlf:recipesContent.prepTime,
             difficulty_level; Niveau de difficulté,
             cooking_time; Temps de cuisson,
             image, 

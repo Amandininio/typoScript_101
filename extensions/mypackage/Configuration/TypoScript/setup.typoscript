@@ -67,6 +67,19 @@ page {
                     1.current = 1
                 }
             }
+            // USELESSSSSSS
+            // file.stdWrap.cObject = CASE
+            // file.stdWrap.cObject {
+            //     key.data = pagelayout
+
+            //     pagets__backendLayout101 = TEXT
+            //     pagets__backendLayout101.value = backendLayoutTemplatee101
+
+            //     default = TEXT
+            //     default.value = EXT:sitepackage/Resources/Private/Templates/Home.html
+
+            // }
+            
             ifEmpty = Default
         }
         templateRootPaths {

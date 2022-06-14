@@ -1,0 +1,59 @@
+mod.web_layout.BackendLayouts {
+  backendLayout101 {
+    title = Backend Layout
+    icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+    config {
+      backend_layout {
+        colCount = 2
+        rowCount = 4
+        rows {
+          1 {
+            columns {
+              1 {
+                name = LLL:EXT:mypackage/Resources/Private/Language/locallang.xlf:backendLayout101.header
+                colspan = 2
+                colPos = 0
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Description
+                colPos = 1
+              }
+              2 {
+                name = Mission
+                colPos = 2
+              }
+            }
+          }
+          3 {
+            columns {
+              1 {
+                name = Equipe
+                colspan = 2
+                colPos = 3
+              }
+            }
+          }
+          4 {
+            columns {
+              1 {
+                name = Products
+                colPos = 4
+              }
+              2 {
+                name = About US
+                colPos = 5
+                cType {
+                        allowed = text
+                    }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,18 @@
             <authorEmail>amandio@talan.com</authorEmail>
         </header>
         <body>
+            <trans-unit id="recipesContent.header">
+                <source>Recipe Title</source>
+            </trans-unit>
+            <trans-unit id="recipesContent.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="recipesContent.prepTime">
+                <source>preparation time</source>
+            </trans-unit>
+            <trans-unit id="backendLayout101.header">
+                <source>Presentation</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
