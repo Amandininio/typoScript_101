@@ -1,0 +1,81 @@
+{
+    "name": "t3/dce",
+    "type": "typo3-cms-extension",
+    "description": "Best FlexForm based content elements since 2012. With TCA mapping feature, simple backend view and much more features which makes it super easy to create own content element types.",
+    "keywords": [
+        "TYPO3 CMS",
+        "DCE",
+        "Content elements",
+        "Dynamic Content Elements"
+    ],
+    "homepage": "https://extensions.typo3.org/extension/dce/",
+    "support": {
+        "source": "https://github.com/a-r-m-i-n/dce",
+        "docs": "https://docs.typo3.org/typo3cms/extensions/dce/",
+        "issues": "https://github.com/a-r-m-i-n/dce/issues",
+        "forum": "https://www.facebook.com/TYPO3.DCE.Extension/"
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Armin Vieweg",
+            "role": "Developer",
+            "email": "armin@v.ieweg.de"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "typo3/cms-core": "^9.5 || ^10.4 || ^11.0"
+    },
+    "require-dev": {
+        "t3/cms": "^10.4",
+        "typo3/cms-linkvalidator": "^10.4",
+        "friendsofphp/php-cs-fixer": "^3.1",
+        "phpstan/phpstan": "^0.12.98",
+        "jangregor/phpstan-prophecy": "^0.8",
+        "saschaegerer/phpstan-typo3": "^0.13",
+        "armin/editorconfig-cli": "^1.5"
+    },
+    "suggest": {
+        "b13/container": "Brings clean container functionality to TYPO3 CMS, supported by DCE."
+    },
+    "autoload": {
+        "psr-4": {
+            "T3\\Dce\\": "Classes"
+        },
+        "files": [
+            "Classes/Compatibility.php"
+        ]
+    },
+    "replace": {
+        "arminvieweg/dce": "*"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "dce",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public",
+            "app-dir": ".Build"
+        }
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor"
+    },
+    "scripts": {
+        "check": [
+            "@ec",
+            "@phpcs",
+            "@phpstan"
+        ],
+        "fix": [
+            "@ec:fix",
+            "@phpcs:fix"
+        ],
+        "phpstan": "phpstan analyse -c Resources/Private/Build/phpstan.neon",
+        "phpcs": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi --verbose --diff --dry-run",
+        "phpcs:fix": "php-cs-fixer fix --config Resources/Private/Build/php-cs-rules.php --ansi",
+        "ec": "ec -n -e Documentation-GENERATED -e .Build -e Resources/Public/JavaScript/Contrib",
+        "ec:fix": "ec -n -e Documentation-GENERATED -e .Build -e Resources/Public/JavaScript/Contrib --fix"
+    }
+}

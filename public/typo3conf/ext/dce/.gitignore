@@ -1,0 +1,11 @@
+/.idea/
+/vendor/
+/.Build/
+/composer.lock
+/gource*
+/*.txt
+/Documentation-GENERATED-temp/
+cachegrind.out.*
+*.zip
+*.log
+*.cache

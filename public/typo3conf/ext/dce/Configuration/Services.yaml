@@ -1,0 +1,13 @@
+services:
+    T3\Dce\Slots\TablesDefinitionIsBeingBuiltSlot:
+        tags:
+            - name: event.listener
+              identifier: 'dce-tables-definition-is-being-built-slot'
+              event: TYPO3\CMS\Core\Database\Event\AlterTableDefinitionStatementsEvent
+              method: 'addSchema'
+    T3\Dce\Slots\LinkAnalyserSlot:
+        tags:
+            - name: event.listener
+              identifier: 'dce-link-analyser-slot'
+              event: TYPO3\CMS\Linkvalidator\Event\BeforeRecordIsAnalyzedEvent
+              method: 'dispatchEvent'
